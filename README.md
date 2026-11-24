@@ -28,6 +28,6 @@ The Android client stores downloaded bundles in app-private files, retains the l
 
 ## Native Android releases
 
-Changes to Capacitor plugins, Android code, manifests, Gradle configuration, native dependencies or the native compatibility number are not OTA-compatible. They require a new signed APK/AAB distributed through the [GitHub Releases](https://github.com/jogwayclaproco-pixel/WealthManager-update/releases) page or Google Play.
+Changes to Capacitor plugins, Android code, manifests, Gradle configuration or native dependencies are not OTA-compatible. They require a new signed APK/AAB distributed through the [GitHub Releases](https://github.com/jogwayclaproco-pixel/WealthManager-update/releases) page or Google Play. Every such native change must also increment `nativeCompatibility` in `ota/native-compatibility.json`; CI rejects native changes without a version increase. This prevents older installed native binaries from accepting a web bundle that expects a newer native bridge.
 
 Google Play remains the recommended channel for native application updates. The application source code and publishing workflow are maintained in the separate `WealthManager-Codemagic` repository.
